@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -14,7 +13,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  {% comment %} <base href="$FLUTTER_BASE_HREF"> {% endcomment %}
+  <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -23,13 +22,13 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="flutterresponsivenavigation">
+  <meta name="apple-mobile-web-app-title" content="Novels Portfolio">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>flutterresponsivenavigation</title>
+  <title>Novels Portfolio</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -38,8 +37,46 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+  <style type="text/css">
+    html {
+      height: 100%;
+      overflow: hidden;
+    }
+    body {
+     
+      background: #262626;
+      
+    }
+    .loading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content:center;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+
+
+
+
+  
+
+
+
+</style>
 </head>
-<body>
+<body >
+  <div class="loading">
+ <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="yogamental-health.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+  </div>
+
+
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

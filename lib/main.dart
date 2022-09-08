@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterresponsivenavigation/Home.dart';
-import 'package:flutterresponsivenavigation/smooth.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,11 +21,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      builder: (context, widget) => ResponsiveWrapper.builder(
+          ClampingScrollWrapper.builder(context, widget!),
+          breakpoints: const [
+            ResponsiveBreakpoint.resize(350, name: MOBILE),
+            ResponsiveBreakpoint.resize(900, name: TABLET),
+            ResponsiveBreakpoint.autoScale(1700, name: DESKTOP)
+          ]),
       scrollBehavior: AppScrollBehavior(),
-      title: "PortfolioApp",
+      title: "Novel Portfolio",
       debugShowCheckedModeBanner: false,
-      home: Home(),
-      theme: ThemeData(cardColor: Color(0xFF212121)),
+      home: const Home(),
+      theme: ThemeData(cardColor: const Color(0xFF212121)),
     );
   }
 }

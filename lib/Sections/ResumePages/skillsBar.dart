@@ -1,3 +1,6 @@
+// ignore: file_names
+// ignore_for_file: file_names, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -9,7 +12,7 @@ Padding skillsBar({String? skillName, double? skillPercent}) {
       children: [
         Text(
           skillName!,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
         const SizedBox(
           height: 16.0,
@@ -21,7 +24,7 @@ Padding skillsBar({String? skillName, double? skillPercent}) {
           percent: skillPercent!,
           backgroundColor: Colors.grey.shade700,
           // progressColor: Colors.blue,
-          linearGradient: LinearGradient(colors: [
+          linearGradient: const LinearGradient(colors: [
             Color(0xffd61a5e),
             Color(0xffff8c05),
           ]),

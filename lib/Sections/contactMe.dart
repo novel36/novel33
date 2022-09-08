@@ -1,7 +1,8 @@
-import 'dart:math';
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class ContactMe extends StatelessWidget {
   const ContactMe({
@@ -11,15 +12,17 @@ class ContactMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 500,
-        color: Color(0xff262626),
+        height: ResponsiveValue(context, defaultValue: 700.0, valueWhen: [
+          const Condition.smallerThan(name: TABLET, value: 700.0)
+        ]).value,
+        color: const Color(0xff262626),
         // padding: EdgeInsets.all(0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Column(
           children: [
-            Expanded(
-                child: Container(
+            SizedBox(
+              height: 16,
+            ),
+            Container(
               padding: const EdgeInsets.all(32.0),
               // color: Colors.red,
               child: Column(
@@ -28,7 +31,7 @@ class ContactMe extends StatelessWidget {
                 children: [
                   Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(
+                    child: const Text(
                       "Contact Me",
                       style: TextStyle(
                           color: Color.fromARGB(255, 255, 118, 5),
@@ -37,7 +40,7 @@ class ContactMe extends StatelessWidget {
                           fontSize: 25),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   Container(
@@ -46,7 +49,12 @@ class ContactMe extends StatelessWidget {
                       "Realize your dream with us",
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 60,
+                          fontSize: ResponsiveValue(context,
+                              defaultValue: 48.0,
+                              valueWhen: [
+                                const Condition.smallerThan(
+                                    name: TABLET, value: 36.0)
+                              ]).value,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -58,34 +66,37 @@ class ContactMe extends StatelessWidget {
                     children: [
                       IconButton(
                           onPressed: () {},
-                          icon: FaIcon(FontAwesomeIcons.facebookF, size: 20),
+                          icon: const FaIcon(FontAwesomeIcons.facebookF,
+                              size: 20),
                           color: Colors.white),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       IconButton(
                           onPressed: () {},
-                          icon: FaIcon(FontAwesomeIcons.twitter, size: 20),
+                          icon:
+                              const FaIcon(FontAwesomeIcons.twitter, size: 20),
                           color: Colors.white),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       IconButton(
                           onPressed: () {},
-                          icon: FaIcon(FontAwesomeIcons.google, size: 20),
+                          icon: const FaIcon(FontAwesomeIcons.google, size: 20),
                           color: Colors.white),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       IconButton(
                           onPressed: () {},
-                          icon: FaIcon(FontAwesomeIcons.telegram, size: 20),
+                          icon:
+                              const FaIcon(FontAwesomeIcons.telegram, size: 20),
                           color: Colors.white),
                     ],
                   )
                 ],
               ),
-            )),
+            ),
             Expanded(
                 child: SingleChildScrollView(
               child: Padding(
@@ -98,36 +109,36 @@ class ContactMe extends StatelessWidget {
                       children: [
                         Expanded(
                           child: TextField(
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               decoration: InputDecoration(
                                 hintText: "First name",
                                 hintStyle:
                                     TextStyle(color: Colors.grey.shade700),
-                                enabledBorder: UnderlineInputBorder(
+                                enabledBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.white, width: 0.3),
                                 ),
-                                focusedBorder: UnderlineInputBorder(
+                                focusedBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Color.fromARGB(255, 255, 118, 5)),
                                 ),
                               )),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 30,
                         ),
                         Expanded(
                           child: TextField(
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               decoration: InputDecoration(
                                 hintText: "Last name",
                                 hintStyle:
                                     TextStyle(color: Colors.grey.shade700),
-                                enabledBorder: UnderlineInputBorder(
+                                enabledBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.white, width: 0.3),
                                 ),
-                                focusedBorder: UnderlineInputBorder(
+                                focusedBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Color.fromARGB(255, 255, 118, 5)),
                                 ),
@@ -135,43 +146,43 @@ class ContactMe extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24.0,
                     ),
                     Row(
                       children: [
                         Expanded(
                           child: TextField(
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               decoration: InputDecoration(
                                 hintText: "First name",
                                 hintStyle:
                                     TextStyle(color: Colors.grey.shade700),
-                                enabledBorder: UnderlineInputBorder(
+                                enabledBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.white, width: 0.3),
                                 ),
-                                focusedBorder: UnderlineInputBorder(
+                                focusedBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Color.fromARGB(255, 255, 118, 5)),
                                 ),
                               )),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 30,
                         ),
                         Expanded(
                           child: TextField(
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               decoration: InputDecoration(
                                 hintText: "Last name",
                                 hintStyle:
                                     TextStyle(color: Colors.grey.shade700),
-                                enabledBorder: UnderlineInputBorder(
+                                enabledBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.white, width: 0.3),
                                 ),
-                                focusedBorder: UnderlineInputBorder(
+                                focusedBorder: const UnderlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Color.fromARGB(255, 255, 118, 5)),
                                 ),
@@ -179,30 +190,30 @@ class ContactMe extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24.0,
                     ),
                     TextField(
                         maxLines: 10,
                         minLines: 5,
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           hintText: "Message",
                           hintStyle: TextStyle(color: Colors.grey.shade700),
-                          enabledBorder: UnderlineInputBorder(
+                          enabledBorder: const UnderlineInputBorder(
                             borderSide:
                                 BorderSide(color: Colors.white, width: 0.3),
                           ),
-                          focusedBorder: UnderlineInputBorder(
+                          focusedBorder: const UnderlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color.fromARGB(255, 255, 118, 5)),
                           ),
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
                     DecoratedBox(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           gradient: LinearGradient(
                               colors: [
                             Color.fromARGB(255, 255, 118, 5),
@@ -214,10 +225,10 @@ class ContactMe extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 vertical: 24.0, horizontal: 16.0),
                             primary: Colors.transparent),
-                        child: Text(
+                        child: const Text(
                           'Send message',
                           style: TextStyle(
                               fontSize: 16.0, fontWeight: FontWeight.bold),

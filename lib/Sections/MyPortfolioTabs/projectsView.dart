@@ -1,8 +1,12 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:hovering/hovering.dart';
 
-GridView mobileApps(
+import 'package:hovering/hovering.dart';
+// import 'portfolioData/portfoliodata.dart';
+
+GridView projectsView(
     {required String tabtitle,
     required List<Map<String, String>> projectTitle,
     required List<String> images}) {
@@ -70,3 +74,9 @@ GridView mobileApps(
         );
       });
 }
+
+// crossAxisCount: 3,
+//     childAspectRatio: 0.9,
+//     crossAxisSpacing: 64,
+//     mainAxisSpacing: 32,
+

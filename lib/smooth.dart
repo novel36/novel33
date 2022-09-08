@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class MySmoothPages extends StatefulWidget {
@@ -30,20 +28,20 @@ class _MySmoothPagesState extends State<MySmoothPages> {
                 reverse: true,
                 children: [
                   Container(
-                    child: Text("data1"),
                     color: Colors.red,
+                    child: const Text("data1"),
                   ),
                   Container(
-                    child: Text("data2"),
                     color: Colors.blue,
+                    child: const Text("data2"),
                   ),
                   Container(
-                    child: Text("data3"),
                     color: Colors.green,
+                    child: const Text("data3"),
                   ),
                   Container(
-                    child: Text("data1"),
                     color: Colors.red,
+                    child: const Text("data1"),
                   ),
                 ],
               ),

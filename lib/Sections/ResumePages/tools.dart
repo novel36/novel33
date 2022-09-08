@@ -1,8 +1,9 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-Widget educationPage(BuildContext context) {
+Widget tools(BuildContext context, {required Shader linearGradient}) {
   return SizedBox(
     height: 380,
     child: ResponsiveRowColumn(
@@ -22,16 +23,25 @@ Widget educationPage(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("Education",
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 255, 118, 5),
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 5,
-                        fontSize: 24)),
                 const SizedBox(
                   height: 32,
                 ),
-                Text("Learning experience in a few ",
+                Text("Tools",
+                    style: TextStyle(
+                      color: const Color.fromARGB(255, 255, 118, 5),
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 5,
+                      fontSize: ResponsiveValue(context,
+                          defaultValue: 40.0,
+                          valueWhen: [
+                            const Condition.smallerThan(
+                                name: TABLET, value: 32.0)
+                          ]).value,
+                    )),
+                const SizedBox(
+                  height: 40,
+                ),
+                Text("Coding tools I've used for",
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
                       // letterSpacing: 5,
@@ -40,24 +50,43 @@ Widget educationPage(BuildContext context) {
                           defaultValue: 40.0,
                           valueWhen: [
                             const Condition.smallerThan(
-                                name: TABLET, value: 28.0)
+                                name: TABLET, value: 32.0)
                           ]).value,
                     )),
                 const SizedBox(
-                  height: 8,
+                  height: 24,
                 ),
-                Text("Schools",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 5,
-                      color: const Color.fromARGB(255, 255, 118, 5),
-                      fontSize: ResponsiveValue(context,
-                          defaultValue: 40.0,
-                          valueWhen: [
-                            const Condition.smallerThan(
-                                name: TABLET, value: 36.0)
-                          ]).value,
-                    ))
+                Expanded(
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText('Developing',
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 5,
+                            color: const Color.fromARGB(255, 255, 118, 5),
+                            fontSize: ResponsiveValue(context,
+                                defaultValue: 40.0,
+                                valueWhen: [
+                                  const Condition.smallerThan(
+                                      name: TABLET, value: 36.0)
+                                ]).value,
+                          )),
+                      TyperAnimatedText('Designing',
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 5,
+                            color: const Color.fromARGB(255, 255, 118, 5),
+                            fontSize: ResponsiveValue(context,
+                                defaultValue: 40.0,
+                                valueWhen: [
+                                  const Condition.smallerThan(
+                                      name: TABLET, value: 36.0)
+                                ]).value,
+                          )),
+                    ],
+                    repeatForever: true,
+                  ),
+                ),
               ],
             ),
           )),
@@ -82,7 +111,7 @@ Widget educationPage(BuildContext context) {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            "Elementary School",
+                            "Visual Studio Code",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -92,7 +121,7 @@ Widget educationPage(BuildContext context) {
                             height: 16,
                           ),
                           Text(
-                            " Ogoba primary school (2002 - 2010)",
+                            "Source-code editor",
                             style: TextStyle(color: Colors.white70),
                           ),
                         ],
@@ -114,7 +143,7 @@ Widget educationPage(BuildContext context) {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            "High School",
+                            "Android Studio",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -124,7 +153,7 @@ Widget educationPage(BuildContext context) {
                             height: 16,
                           ),
                           Text(
-                            "Negele Secondary School (2011 - 2013)",
+                            "Official IDE for Android application development",
                             style: TextStyle(color: Colors.white70),
                           ),
                         ],
@@ -146,7 +175,7 @@ Widget educationPage(BuildContext context) {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            "Preparatory school",
+                            "Figma",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -156,7 +185,7 @@ Widget educationPage(BuildContext context) {
                             height: 16,
                           ),
                           Text(
-                            "Negele Borena secondary and preparatory school (2014 - 2015)",
+                            "A Design tool for interface design",
                             style: TextStyle(color: Colors.white70),
                           ),
                         ],
@@ -178,7 +207,7 @@ Widget educationPage(BuildContext context) {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            "College",
+                            "Adobe XD",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -188,7 +217,71 @@ Widget educationPage(BuildContext context) {
                             height: 16,
                           ),
                           Text(
-                            "Zion college (2015 - 2020)",
+                            "A Design tool for web and mobile applications",
+                            style: TextStyle(color: Colors.white70),
+                          ),
+                        ],
+                      ),
+                    )),
+                  ),
+                  TimelineTile(
+                    indicatorStyle:
+                        const IndicatorStyle(color: Color(0xffFF8C05)),
+                    afterLineStyle:
+                        const LineStyle(color: Colors.white, thickness: 2.2),
+                    beforeLineStyle:
+                        const LineStyle(color: Colors.white, thickness: 2.2),
+                    endChild: SizedBox(
+                        child: Padding(
+                      padding: const EdgeInsets.only(left: 24.0, top: 28),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Inkscape",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Text(
+                            "A vector graphics editor used to create vector images",
+                            style: TextStyle(color: Colors.white70),
+                          ),
+                        ],
+                      ),
+                    )),
+                  ),
+                  TimelineTile(
+                    indicatorStyle:
+                        const IndicatorStyle(color: Color(0xffFF8C05)),
+                    afterLineStyle:
+                        const LineStyle(color: Colors.white, thickness: 2.2),
+                    beforeLineStyle:
+                        const LineStyle(color: Colors.white, thickness: 2.2),
+                    endChild: SizedBox(
+                        child: Padding(
+                      padding: const EdgeInsets.only(left: 24.0, top: 28),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Atom",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Text(
+                            "Source code editor ",
                             style: TextStyle(color: Colors.white70),
                           ),
                         ],

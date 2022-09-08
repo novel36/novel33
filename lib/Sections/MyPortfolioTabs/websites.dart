@@ -1,64 +1,70 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-const _images = [
-  'https://picsum.photos/200/300',
-  'https://picsum.photos/200/301',
-  'https://picsum.photos/200/302',
-  'https://picsum.photos/200/303',
-  'https://picsum.photos/200/304',
-  'https://picsum.photos/200/305',
-];
+import 'package:flutterresponsivenavigation/Sections/MyPortfolioTabs/portfolioData/portfoliodata.dart';
+import 'package:hovering/hovering.dart';
 
 GridView website() {
-  return GridView.count(
-    crossAxisCount: 3,
-    childAspectRatio: 0.9,
-    crossAxisSpacing: 64,
-    mainAxisSpacing: 32,
-    children: [
-      Container(
-        //
-        height: 200,
-        // color: Colors.red,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover, image: NetworkImage(_images[0]))),
+  return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 400,
+        childAspectRatio: 0.9,
+        crossAxisSpacing: 64,
+        mainAxisSpacing: 32,
       ),
-      Container(
-        height: 200,
-        // color: Colors.yellow,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover, image: NetworkImage(_images[1]))),
-      ),
-      Container(
-        height: 200,
-        // color: Colors.pink,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover, image: NetworkImage(_images[2]))),
-      ),
-      Container(
-        height: 200,
-        // color: Colors.green,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover, image: NetworkImage(_images[3]))),
-      ),
-      Container(
-        height: 200,
-        // color: Colors.purple,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover, image: NetworkImage(_images[4]))),
-      ),
-      Container(
-        height: 200,
-        // color: Colors.amber,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover, image: NetworkImage(_images[5]))),
-      )
-    ],
-  );
+      itemCount: images.length,
+      itemBuilder: (BuildContext ctx, index) {
+        return HoverWidget(
+          hoverChild: Stack(children: [
+            Opacity(
+              opacity: 0.4,
+              child: Container(
+                decoration: BoxDecoration(
+                    // color: Colors.red,
+
+                    image: DecorationImage(
+                        fit: BoxFit.cover, image: NetworkImage(images[index]))),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    projectTitle[index]["title"]!,
+                    style: const TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    projectTitle[index]["type"]!,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.open_in_browser,
+                        color: Colors.blue,
+                      )),
+                  const SizedBox(
+                    height: 24,
+                  )
+                ],
+              ),
+            ),
+          ]),
+          onHover: (event) {
+            if (kDebugMode) {
+              print("did");
+            }
+          },
+          child: Container(
+            height: 200,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.cover, image: NetworkImage(images[index]))),
+          ),
+        );
+      });
 }

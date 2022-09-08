@@ -1,7 +1,6 @@
-import 'dart:math';
+// ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class footer extends StatelessWidget {
   const footer({
@@ -13,10 +12,10 @@ class footer extends StatelessWidget {
     return Container(
       height: 100,
       alignment: Alignment.center,
-      color: Color(0xff262626),
+      color: const Color(0xff262626),
       // padding: EdgeInsets.all(),
-      child: Text(
-        "Templates Hub",
+      child: const Text(
+        "novel @ 2022",
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
