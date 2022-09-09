@@ -134,7 +134,7 @@ class Profile extends StatelessWidget {
                                   BoxShadow(
                                     color: Color.fromARGB(255, 4, 5, 5),
                                     blurRadius: 4,
-                                    offset: Offset(4, 8), // Shadow position
+                                    offset: Offset(1, 5), // Shadow position
                                   ),
                                 ],
                                 borderRadius: BorderRadius.circular(10),
