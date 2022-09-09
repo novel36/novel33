@@ -10,6 +10,7 @@ import 'package:flutterresponsivenavigation/Sections/myPortfolio.dart';
 import 'package:flutterresponsivenavigation/Sections/profileIntro.dart';
 import 'package:flutterresponsivenavigation/Sections/resume.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
 class Home extends StatefulWidget {
@@ -98,8 +99,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             style: TextButton.styleFrom(
                                 padding: const EdgeInsets.all(8)),
                             onPressed: () {},
-                            child: Text(
+                            child: GradientText(
                               "NOVEL",
+                              colors: [
+                                Colors.blue,
+                                Colors.red,
+                                Colors.teal,
+                              ],
                               style: TextStyle(
                                   // foreground: Paint()..shader = linearGradient,
                                   fontWeight: FontWeight.w900,

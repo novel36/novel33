@@ -51,6 +51,7 @@ dependencies:
   hovering: ^1.0.4
   responsive_framework: ^0.2.0
   url_strategy: ^0.2.0
+  simple_gradient_text: ^1.2.3
  
  
   
