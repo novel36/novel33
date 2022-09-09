@@ -132,7 +132,7 @@ class Profile extends StatelessWidget {
                             decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
-                                    color: Colors.blueGrey,
+                                    color: Color.fromARGB(255, 4, 5, 5),
                                     blurRadius: 4,
                                     offset: Offset(4, 8), // Shadow position
                                   ),
