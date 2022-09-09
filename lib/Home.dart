@@ -101,9 +101,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             child: Text(
                               "NOVEL",
                               style: TextStyle(
-                                  foreground: Paint()..shader = linearGradient,
+                                  // foreground: Paint()..shader = linearGradient,
                                   fontWeight: FontWeight.w900,
-                                  // color: Colors.white,
+                                  color: Colors.white,
                                   letterSpacing: 10,
                                   fontSize: 25),
                             ),
