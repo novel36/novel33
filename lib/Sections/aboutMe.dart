@@ -157,7 +157,9 @@ class AboutMe extends StatelessWidget {
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         opacity: 0.6,
-                        image: AssetImage("about.jpg"),
+                        image: kReleaseMode
+                            ? AssetImage("assets/about.jpg")
+                            : AssetImage("about.jpg"),
                         fit: BoxFit.cover)),
               )),
             ),
