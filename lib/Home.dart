@@ -101,11 +101,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             onPressed: () {},
                             child: GradientText(
                               "NOVEL",
-                              colors: [
-                                Colors.blue,
-                                Colors.red,
-                                Colors.teal,
-                              ],
+                              colors: [Color(0xffd61a5e), Color(0xffff8c05)],
                               style: TextStyle(
                                   // foreground: Paint()..shader = linearGradient,
                                   fontWeight: FontWeight.w900,
