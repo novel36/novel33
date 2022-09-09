@@ -113,6 +113,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                               cursor: SystemMouseCursors.click,
                               child: GestureDetector(
                                 onTap: () {
+                                  if (kDebugMode) {
+                                    print("dd");
+                                  }
                                   if (!isMenuOpened) {
                                     _controller.forward();
                                     isMenuOpened = true;

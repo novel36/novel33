@@ -3,6 +3,7 @@
 import 'dart:math';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -132,7 +133,9 @@ class Profile extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                                 image: const DecorationImage(
                                     opacity: 0.6,
-                                    image: AssetImage("intro-image.jpg"),
+                                    image: kReleaseMode
+                                        ? AssetImage("assets/intro-image.jpg")
+                                        : AssetImage("intro-image.jpg"),
                                     fit: BoxFit.cover))),
                       ),
                     ],
