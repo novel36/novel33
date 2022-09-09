@@ -50,6 +50,7 @@ dependencies:
   scrollable_positioned_list: ^0.3.2
   hovering: ^1.0.4
   responsive_framework: ^0.2.0
+  url_strategy: ^0.2.0
  
  
   
