@@ -130,6 +130,13 @@ class Profile extends StatelessWidget {
                             height: 200,
                             // color: Colors.green,
                             decoration: BoxDecoration(
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.blueGrey,
+                                    blurRadius: 4,
+                                    offset: Offset(4, 8), // Shadow position
+                                  ),
+                                ],
                                 borderRadius: BorderRadius.circular(10),
                                 image: const DecorationImage(
                                     opacity: 0.6,
