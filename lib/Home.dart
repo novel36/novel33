@@ -1,5 +1,7 @@
 // ignore_for_file: file_names
 
+import 'dart:convert';
+
 import 'package:expandable/expandable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ import 'package:flutterresponsivenavigation/Sections/resume.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
+import 'package:http/http.dart' as http;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -98,7 +101,19 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           TextButton(
                             style: TextButton.styleFrom(
                                 padding: const EdgeInsets.all(8)),
-                            onPressed: () {},
+                            onPressed: () async {
+                              var url = Uri.https(
+                                  'novel.up.railway.app', '/api/about-me');
+                              var response;
+                              var decode;
+                              try {
+                                response = await http.get(url);
+                                decode = json.decode(response.body);
+                              } catch (e) {}
+
+                              print('Response status: ${response.statusCode}');
+                              print('Response body: ${decode[0]['name']}');
+                            },
                             child: GradientText(
                               "NOVEL",
                               colors: [Color(0xffd61a5e), Color(0xffff8c05)],
