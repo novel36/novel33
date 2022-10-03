@@ -71,6 +71,20 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () async {
+            var url = Uri.https('novel.up.railway.app', '/api/about-me');
+            var response;
+            var decode;
+            try {
+              response = await http.get(url);
+              decode = json.decode(response.body);
+            } catch (e) {}
+
+            print('Response status: ${response.statusCode}');
+            print('Response body: ${decode[0]['name']}');
+          },
+        ),
         backgroundColor: const Color(0xFF212121),
         body: SingleChildScrollView(
           child: Padding(
